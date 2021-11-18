@@ -1,4 +1,4 @@
-// out: ../css/style.css, compress: true, sourceMap: false
+// out: ../css/style.css, compress: false, sourceMap: false
 
 @import "font.css";
 @import "variables";
@@ -9,7 +9,6 @@ body {
 	padding: 0px;
 	margin: 0;
 	font-family: 'AvenirNext';
-	background-color: red;
 	* {
 		box-sizing: border-box;
 	}
@@ -21,15 +20,15 @@ h1 {
 	margin: 0;
 }
 h2 {
-	.font(700, 22px);
+	.font(700, 18px);
 	padding: 0;
 	margin: 0;	
 }
 h3 {
-	.font(400, 22px);
+	.font(400, 18px);
 	padding: 0;
 	margin: 0;
-	color: #9b9b9b;
+	color: rgba(0, 0, 0, 0.38);
 }
 
 a {
@@ -188,14 +187,15 @@ a {
 			}
 			.title {
 				color: @pri-color;
-				.font(500, 22px);
+				.font(500, 18px);
 				text-decoration: underline;
 			}
 			.alt-title {
-				.font(700, 18px);
+				.font(700, 14px);
 			}
 			p {
-				.font(400, 18px);
+				.font(400, 14px);
+				line-height: 24px;
 				color: #000;
 				padding: 0;
 				margin: 0;

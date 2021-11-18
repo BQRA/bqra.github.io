@@ -1,8 +1,76 @@
 {
+  "Skills": [
+    [
+  		"About Me",
+  		"I have been working for 15+ years as a front-end developer and sometimes product designer for various companies and my own projects. I used many front-end technologies while developing some projects. But after these years I decided that I want to continue to my career working for design teams. I experienced agile methodologies like scrum and kanban. Now, I'm design system lead at Hepsiburada in Turkey."
+  	],
+  	[
+  		"Applications",
+  		"Figma, Sketch, Zeplin, Invision, Framer X, Sublime (Mac Os), Adobe Photoshop, Dreamweaver, Mac Os X, Visual Studio, Firebug, AutoCAD"
+  	]
+  ],
+  "Working Experiences": [
+    [
+      "04/2019 - Current",
+      "# Hepsiburada \n ## Senior Product Designer (Design System Lead) \n Hepsiburada one of the most popular e-commerce platform in Turkey. I'm working in Design System team. We create a Design System project for all projects that Hepsiburada has. "
+    ],
+    [
+      "04/2019 - 04/2020",
+      "# Justlife (Justmop before) \n ## Senior Product Designer \n Justmop is a Dubai-based startup. I worked with the Turkey team in Turkey. They created a design team and I designed all they need for design system."
+    ],
+    [
+      "12/2017 - 04/2019",
+      "# Kariyer.net \n ## Senior Product Designer \n Kariyer.net is job board for employers and candidates. It is the best job company in Turkey. I was working as a Product Designer in employers project and I prepared design kit to developers. Thinking users is the most important thing for me. I was working with the product managers and UX designers. We are running design sprints with using scrum methodology."
+    ],
+    [
+      "5/2016 - 9/2016",
+      "# Global Kapital \n ## Senior Front-End Developer \n It’s a micro credit project based in Turkey for spanish users. I worked on MyKredit.es team and developing front-end technologies using AngularJS. We worked with scrum."
+    ],
+    [
+      "4/2015 - 1/2016",
+      "# Hürriyet \n ## Front-End Developer \n Hurriyet is a big news company in Turkey. I developed Turkey’s Election results page with an interactive map using JSON technologies."
+    ],
+    [
+      "9/2014 - 2/2015",
+      "# Biletino \n ## Sr. Front-End Developer & Product Designer \n It’s a ticket sales company for all type events. I worked as a designer and front-end developer in this company."
+    ],
+    [
+      "12/2013 — 08/2014",
+      "# Çiçeksepeti \n ## Front-End Developer \n It was an e-commerce company and I worked there as a front-end developer. I met Agile methodologies in here like Scrum. I’m still using these experiences about methodologies. Ciceksepeti helps users to sending flowers to anywhere they want easily."
+    ],
+    [
+      "4/2013 — 10/2013",
+      "# Turkuvaz Medya \n ## Front-End Developer & Product Designer \n I worked as a product designer and front-end developer on this company. Turkuvaz medya is big news company in Turkey and my project was a small start-up included in here."
+    ],
+    [
+      "8/2012 — 03/2013",
+      "# Ekseriya Games \n ## Front-End Developer & Product Designer \n I met special technologies with this team like node.js, jade, stylus. The team was developing table games using HTML5 as responsive.      "
+    ],
+    [
+      "4/2012 — 8/2012",
+      "# Markakod Reklam ve Tasarım Ajansı \n ## Front-End Developer \n In this advertising agency we were creating so many websites for different customers. I was working in development team as a frontend developer in here."
+    ],
+    [
+      "8/2009 — 4/2012",
+      "# DOL / Ekolay \n ## HTML Coder \n In 2009 I start working as an HTML Coder for a company who publish news, finance, game contents to people. In here I met Javascript and Jquery library."
+    ]
+  ],
   "Projects": [
+    [
+      "2021",
+      "# [Rio](https://ui8.net/pixelmatic/products/rio--design-system-for-electric-scooters?status=6) \n Rio is a completely ready for development electric scooter/bike sharing project. \n\n `Figma` `Design Kit` \n ### Freelance"
+    ],
+    [
+      "2020",
+      "# [Degry Weather Iconset](Degry Weather Iconset) \n Degry weather iconset created for designers and developers who wants to use amazing multi-colors iconset. \n\n `Figma` `Iconset` \n ### Freelance"
+    ],
     [
       "2018",
       "# [Edaf](https://dribbble.com/shots/5179491-Login-form) \n I am leading designs to project that based Germany from Turkey as a remote designer. That project is using Microsoft Navision base for the warehouse management. \n\n `Sketch Design` `Design Kit` \n ### Remote"
+    ],
+    [
+    	"2017",
+    	"# [Turkey District Map](https://codecanyon.net/item/interactive-vectorel-turkey-districts-map-svg-js-html5/18747101) \n I drew a interactive Turkey district map for selling it on Codecanyon. And I developed its front-end, css javascript using jquery ajax.  \n\n `Sketch` `SVG` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
   	[
   		"2017",
@@ -15,10 +83,6 @@
     [
       "2016",
       "# [Degry](https://itunes.apple.com/gm/app/degry/id1080200902?mt=8) \n Degry is a weather application for iOS devices. I designed and developed that project myself (Drawing icons, designing pages and developing application using Cordova and Ionic etc.) It was my fun project and released App Store for 2 years. \n\n `Sketch` `HTML` `CSS` `jQuery` `AngularJS` `IONIC Framework` \n ### Freelance"
-    ],
-    [
-    	"2015",
-    	"# [Turkey 2015 Elections](http://www.hurriyet.com.tr/secim/sonuclar) \n I drew a interactive Turkey map to 2015 Turkey’s Election project for Hurriyet.com.tr. And i developed its front-end, css javascript using jquery ajax.  \n\n `Sketch` `SVG` `HTML` `CSS` `jQuery` \n ### Company"
     ],
     [
     	"2015",
@@ -65,58 +129,14 @@
       "# [Piramitgroup](http://piramitgroup.org) \n I designed and developed a website for organisation company in Turkey. \n\n `PSD` `HTML` `CSS` \n ### Remote"
     ]
   ],
-  "Working Experiences": [
+  "Certificates & Events": [
     [
-      "12/2017 - Devam ediyor",
-      "# Kariyer.net \n ## Product UI Designer \n Kariyer.net is job board for employers and candidates. It is the best job company in Turkey. I am working as a Product Designer in employers project and i preparing design kit to developers. Thinking users is the most important thing for us, design team. I am working with product manager and UX designer. We are running sprints with using scrum methodology."
-    ],
-    [
-      "5/2016 - 9/2016",
-      "# Global Kapital \n ## Senior Front-End Developer \n It’s a micro credit project based in Turkey for spanish users. I worked on MyKredit.es team and developing front-end technologies using AngularJS. We worked with scrum."
-    ],
-    [
-      "4/2015 - 1/2016",
-      "# Hürriyet \n ## Front-End Developer \n Hurriyet is a big news company in Turkey. I developed Turkey’s Election results page with an interactive map using JSON technologies. [Link](http://hurriyet.com.tr/secim/sonuclar?agency=aa)."
-    ],
-    [
-      "9/2014 - 2/2015",
-      "# Biletino \n ## Sr. Front-End Developer & Product Designer \n It’s a ticket sales company for all type events. I worked as a designer and front-end developer in this company."
-    ],
-    [
-      "12/2013 — 08/2014",
-      "# Çiçeksepeti \n ## Front-End Developer \n It’s an e-commerce company and i worked in here as a front-end developer. Ciceksepeti helps users to sending flowers to anywhere they want easily."
-    ],
-    [
-      "4/2013 — 10/2013",
-      "# Turkuvaz Medya \n ## Front-End Developer & Product Designer \n I worked as a product designer and front-end developer on this company. Turkuvaz medya is big news company in Turkey and my project was a small start-up included in here."
-    ],
-    [
-      "8/2012 — 03/2013",
-      "# Ekseriya Games \n ## Front-End Developer & Product Designer \n I met special technologies with this tema like node.js, jade, stylus. The team was developing table games using HTML5 within responsive."
-    ],
-    [
-      "4/2012 — 8/2012",
-      "# Markakod Reklam ve Tasarım Ajansı \n ## Front-End Developer \n It is a web design agency and i was working as a front-end developer in here."
-    ],
-    [
-      "8/2009 — 4/2012",
-      "# DOL / Ekolay \n ## HTML Coder \n Ekolay was the big news company. I worked as a HTML coder in this company and i was getting design files from designers and developing HTML, CSS base."
-    ]
-  ],
-  "Skills": [
-  	[
-  		"Applications",
-  		"Sketch, Zeplin, Invision, Framer X, Sublime (Mac Os), Adobe Photoshop, Dreamweaver, Mac Os X, Visual Studio, Firebug, AutoCAD"
+  		"2021",
+  		"## Space Club: Design System Talk \n\n I have been talked in an event about Design System. Talk details on Youtube: https://www.youtube.com/watch?v=NvaCgXUM8W8"
   	],
   	[
-  		"About Me",
-  		"I am working for 13+ years as a front-end developer and sometimes product designer for various companies and my own projects. I used many front-end technologies while developing some projects. But after these years i want to continue to my career working for design teams. I experienced agile methodologies like scrum and kanban."
-  	]
-  ],
-  "Certificates": [
-  	[
-  		"Agile Management and Scrum",
-  		"__Agile management and Scrum__ certificate getting from __ACM__ company."
+  		"2014",
+  		"## Agile management and Scrum \n\n Certificate getting from __ACM__ company."
   	]
   ],
   "Education": [
@@ -142,7 +162,7 @@
   "Hobbies": [
   	[
   		"",
-  		"Design world, Motocycle trips, Sport, Netflix & Chill"
+  		"Design world, Motocycle trips, Sport, Camping"
   	]
   ],
   "Me on Social Networks": [
