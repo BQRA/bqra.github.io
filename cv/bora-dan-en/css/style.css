@@ -34,6 +34,15 @@
 .btn.red {
   background-color: #D73391;
 }
+.print-button {
+  position: fixed;
+  z-index: 9;
+  bottom: 40px;
+  left: 50%;
+  width: 160px;
+  text-align: center;
+  margin-left: -60px;
+}
 .section .description > span h1 {
   font-size: 18px !important;
   margin: 0 0 10px 0;
@@ -227,7 +236,6 @@ a:active {
   position: relative;
   display: inline-block;
   width: 100%;
-  padding: 20px 0;
 }
 .vertical-line .section:last-child {
   margin-bottom: 0;
@@ -235,7 +243,7 @@ a:active {
 .vertical-line .section > h2 {
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 0;
 }
 .vertical-line .section .description {
   width: 51%;

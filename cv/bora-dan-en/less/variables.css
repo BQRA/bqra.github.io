@@ -1,0 +1,44 @@
+/* COLORS */
+/* FONTS */
+.btn {
+  padding: 12px 25px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font: 400 15px 'AvenirNext', 'Helvetica Neue', 'Arial', 'sans-serif';
+  color: #fff;
+  border: none;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.btn:hover {
+  box-shadow: 0 5px 22px rgba(0, 0, 0, 0.18);
+}
+.btn.default {
+  background: -webkit-linear-gradient(#642DF4, #B87EF4);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#642DF4, #B87EF4);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#642DF4, #B87EF4);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#642DF4, #B87EF4);
+  /* Standard syntax */
+}
+.btn.facebook {
+  background-color: #493DEE;
+}
+.btn.red {
+  background-color: #D73391;
+}
+.print-button {
+  position: fixed;
+  z-index: 9;
+  bottom: 40px;
+  left: 50%;
+  width: 160px;
+  text-align: center;
+  margin-left: -60px;
+}
