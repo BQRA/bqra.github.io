@@ -2,151 +2,151 @@
   "Skills": [
     [
   		"About Me",
-  		"I have been working for 15+ years as a front-end developer and sometimes product designer for various companies and my own projects. I used many front-end technologies while developing some projects. But after these years I decided that I want to continue to my career working for design teams. I experienced agile methodologies like scrum and kanban. Now, I'm design system lead at Hepsiburada in Turkey."
+  		"I have been working for 15+ years as a product designer and front-end developer for various companies and my own projects. I am highly skilled across many design tools, but am currently heavily invested in FIGMA. I have also used many front-end technologies across my career. I am well versed across agile methodologies. I am currently a Design Systems specialist, helping organisations create alignment across their design and engineering teams."
   	],
   	[
   		"Applications",
-  		"Figma, Sketch, Zeplin, Invision, Framer X, Sublime (Mac Os), Adobe Photoshop, Dreamweaver, Mac Os X, Visual Studio, Firebug, AutoCAD"
+  		"Figma, Sketch, Zeplin, Invision, Framer X, Sublime (Mac Os), Adobe Photoshop, Dreamweaver, Visual Studio, Firebug, AutoCAD, Mac Os X"
   	]
   ],
-  "Working Experiences": [
+  "Work Experience": [
     [
       "03/2022 - Current",
-      "# Omnia (Dubai based)\n ## Design System Designer \n We're creating large scaled design systems for a big clients."
+      "# Omnia (Dubai based)\n ## Design System Specialist \n My current project is building out a Design System for the Abu Dhabi Government. From a foundational Design Token system (allows Theming) to fully scalable components, modules and templates in English and Arabic. This system is robust and extremely modular allowing the client to build and scale new entity sites as well as linking the design decisions to development by exporting the Design Tokens into JSON for the Front-End Engineers to utilise."
     ],
     [
       "04/2019 - 01/2022",
-      "# Hepsiburada \n ## Senior Product Designer (Design System Lead) \n Hepsiburada one of the most popular e-commerce platform in Turkey. I'm working in Design System team. We create a Design System project for all projects that Hepsiburada has. "
+      "# Hepsiburada \n ## Design System Lead \n Hepsiburada is one of the largest e-commerce platforms in Turkey. I'm worked in their Design System team. We created a Design System to support all of their digital projects."
     ],
     [
       "04/2019 - 04/2020",
-      "# Justlife (Justmop before) \n ## Senior Product Designer \n Justmop is a Dubai-based startup. I worked with the Turkey team in Turkey. They created a design team and I designed all they need for design system."
+      "# Justlife (Justmop before) \n ## Senior Product Designer - Design Systems \n Justmop is a Dubai-based startup. I worked with the team in Turkey. I was the lead Designer on the Design System."
     ],
     [
       "12/2017 - 04/2019",
-      "# Kariyer.net \n ## Senior Product Designer \n Kariyer.net is job board for employers and candidates. It is the best job company in Turkey. I was working as a Product Designer in employers project and I prepared design kit to developers. Thinking users is the most important thing for me. I was working with the product managers and UX designers. We are running design sprints with using scrum methodology."
+      "# Kariyer.net \n ## Senior Product Designer \n Kariyer.net is a job board for employers and candidates. I worked as a Product Designer on the employers portal. I designed and delivered a fully integrated design kit for the engineering team."
     ],
     [
       "5/2016 - 9/2016",
-      "# Global Kapital \n ## Senior Front-End Developer \n It’s a micro credit project based in Turkey for spanish users. I worked on MyKredit.es team and developing front-end technologies using AngularJS. We worked with scrum."
+      "# Global Kapital \n ## Senior Front-End Developer \n It’s a micro credit project based in Turkey for spanish users. I worked on the MyKredit.es team and developed front-end solutions using AngularJS."
     ],
     [
       "4/2015 - 1/2016",
-      "# Hürriyet \n ## Front-End Developer \n Hurriyet is a big news company in Turkey. I developed Turkey’s Election results page with an interactive map using JSON technologies."
+      "# Hürriyet \n ## Front-End Developer \n Hurriyet is a large news company in Turkey. I developed Turkey’s Election results page with an interactive map using JSON."
     ],
     [
       "9/2014 - 2/2015",
-      "# Biletino \n ## Sr. Front-End Developer & Product Designer \n It’s a ticket sales company for all type events. I worked as a designer and front-end developer in this company."
+      "# Biletino \n ## Sr. Front-End Developer & Product Designer \n Biletino is an events ticketing system. I worked as a designer and Front-End developer."
     ],
     [
       "12/2013 — 08/2014",
-      "# Çiçeksepeti \n ## Front-End Developer \n It was an e-commerce company and I worked there as a front-end developer. I met Agile methodologies in here like Scrum. I’m still using these experiences about methodologies. Ciceksepeti helps users to sending flowers to anywhere they want easily."
+      "# Çiçeksepeti \n ## Front-End Developer \n Çiçeksepeti is an e-commerce company helping users to send flowers anywhere, easily. I worked as a Front-End developer. "
     ],
     [
       "4/2013 — 10/2013",
-      "# Turkuvaz Medya \n ## Front-End Developer & Product Designer \n I worked as a product designer and front-end developer on this company. Turkuvaz medya is big news company in Turkey and my project was a small start-up included in here."
+      "# Turkuvaz Medya \n ## Front-End Developer & Product Designer \n Turkuvaz medya is large news company in Turkey. I worked as a product designer and Front-End developer."
     ],
     [
       "8/2012 — 03/2013",
-      "# Ekseriya Games \n ## Front-End Developer & Product Designer \n I met special technologies with this team like node.js, jade, stylus. The team was developing table games using HTML5 as responsive.      "
+      "# Ekseriya Games \n ## Front-End Developer & Product Designer \n We developed table games using responsive HTML5, CSS3 node.js, jade and stylus."
     ],
     [
       "4/2012 — 8/2012",
-      "# Markakod Reklam ve Tasarım Ajansı \n ## Front-End Developer \n In this advertising agency we were creating so many websites for different customers. I was working in development team as a frontend developer in here."
+      "# Markakod Reklam ve Tasarım Ajansı \n ## Front-End Developer \n In this advertising agency we created many websites for a variety of customers. I was working in engineering team as a Front-End developer."
     ],
     [
       "8/2009 — 4/2012",
-      "# DOL / Ekolay \n ## HTML Coder \n In 2009 I start working as an HTML Coder for a company who publish news, finance, game contents to people. In here I met Javascript and Jquery library."
+      "# DOL / Ekolay \n ## HTML Coder \n In 2009 I start working as a Front-End engineer for a company who published news, finance and game content. I focussed on Javascript and Jquery."
     ]
   ],
-  "Projects": [
+  "Personal Projects": [
     [
       "2021",
       "# [Rio](https://ui8.net/pixelmatic/products/rio--design-system-for-electric-scooters?status=6) \n Rio is a completely ready for development electric scooter/bike sharing project. \n\n `Figma` `Design Kit` \n ### Freelance"
     ],
     [
       "2020",
-      "# [Degry Weather Iconset](Degry Weather Iconset) \n Degry weather iconset created for designers and developers who wants to use amazing multi-colors iconset. \n\n `Figma` `Iconset` \n ### Freelance"
+      "# [Degry Weather Iconset](Degry Weather Iconset) \n I designed the Degry weather iconset for designers and engineers. \n\n `Figma` `Iconset` \n ### Freelance"
     ],
     [
       "2018",
-      "# [Edaf](https://dribbble.com/shots/5179491-Login-form) \n I am leading designs to project that based Germany from Turkey as a remote designer. That project is using Microsoft Navision base for the warehouse management. \n\n `Sketch Design` `Design Kit` \n ### Remote"
+      "# [Edaf](https://dribbble.com/shots/5179491-Login-form) \n Lead Designer for a project based Germany. This project used Microsoft Navision base for warehouse management. \n\n `Sketch Design` `Design Kit` \n ### Remote"
     ],
     [
     	"2017",
-    	"# [Turkey District Map](https://codecanyon.net/item/interactive-vectorel-turkey-districts-map-svg-js-html5/18747101) \n I drew a interactive Turkey district map for selling it on Codecanyon. And I developed its front-end, css javascript using jquery ajax.  \n\n `Sketch` `SVG` `HTML` `CSS` `jQuery` \n ### Freelance"
+    	"# [Turkey District Map](https://codecanyon.net/item/interactive-vectorel-turkey-districts-map-svg-js-html5/18747101) \n I designed and developed the Front-End (CSS, Javascript, jquery and ajax) for an interactive Turkey district map and sold it on Codecanyon.  \n\n `Sketch` `SVG` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
   	[
   		"2017",
-  		"# [Tap Tap](https://www.behance.net/gallery/53288485/Detailed-Mobile-Project) \n I am managing design kit for that online fast shopping project. You can look at the some screens about the TapTap on the [Dribbble](https://dribbble.com/bqra/projects/512073-Tap-Tap-Fast-Local-Shopping) and [Behance](https://www.behance.net/gallery/53288485/Detailed-Mobile-Project). \n\n `Sketch Design` `Design Kit` \n ### Remote"
+  		"# [Tap Tap](https://www.behance.net/gallery/53288485/Detailed-Mobile-Project) \n I designed a design kit for an online fast shopping project. You can see some of the screens here [Dribbble](https://dribbble.com/bqra/projects/512073-Tap-Tap-Fast-Local-Shopping) and [Behance](https://www.behance.net/gallery/53288485/Detailed-Mobile-Project). \n\n `Sketch Design` `Design Kit` \n ### Remote"
   	],
   	[
   		"2017",
-  		"# [Realnet](https://www.behance.net/gallery/53401835/Mobile-App-Design-for-Realestate-Agents) \n I worked with developers while designing a realestate project. You can look to details on [Dribbble](https://dribbble.com/shots/3340977-Mobile-Realestate) and [Behance](https://www.behance.net/gallery/53401835/Mobile-App-Design-for-Realestate-Agents). \n\n `Sketch Design` `Marvel Preview` \n ### Remote"
+  		"# [Realnet](https://www.behance.net/gallery/53401835/Mobile-App-Design-for-Realestate-Agents) \n I worked with developers while designing a realestate project. You can see the details here [Dribbble](https://dribbble.com/shots/3340977-Mobile-Realestate) and [Behance](https://www.behance.net/gallery/53401835/Mobile-App-Design-for-Realestate-Agents). \n\n `Sketch Design` `Marvel Preview` \n ### Remote"
   	],
     [
       "2016",
-      "# [Degry](https://itunes.apple.com/gm/app/degry/id1080200902?mt=8) \n Degry is a weather application for iOS devices. I designed and developed that project myself (Drawing icons, designing pages and developing application using Cordova and Ionic etc.) It was my fun project and released App Store for 2 years. \n\n `Sketch` `HTML` `CSS` `jQuery` `AngularJS` `IONIC Framework` \n ### Freelance"
+      "# [Degry](https://itunes.apple.com/gm/app/degry/id1080200902?mt=8) \n Degry is a weather application for iOS devices. I designed and developed this project myself (Creating icons, designing pages and developing the application using Cordova and Ionic etc.) It was a fun project that was released on App Store. \n\n `Sketch` `HTML` `CSS` `jQuery` `AngularJS` `IONIC Framework` \n ### Freelance"
     ],
     [
     	"2015",
-    	"# [Jalendar 2](http://codecanyon.net/item/jalendar-2-calendar-pack-event-range-and-more/12662442) \n Jalendar 2 is my CodeCanyon sales project for all developers. I designed and developed a calendar plugin with using jquery. You can pick a date or range with this calendar simply. It had been trending on Javascript / Calendar category. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` \n ### Freelance"
+    	"# [Jalendar 2](http://codecanyon.net/item/jalendar-2-calendar-pack-event-range-and-more/12662442) \n Jalendar 2 is my CodeCanyon sales project for engineers. I designed and developed a calendar plugin using jquery. You can pick a date or range with this calendar easily. It trended in CodeCanyon's Javascript / Calendar category. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
     	"2015",
-    	"# [Pikselmatik.com](http://pikselmatik.com) \n I designed and developed my own website with CSS3 animations and more. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` \n ### Freelance"
+    	"# [Pikselmatik.com](http://pikselmatik.com) \n I designed and developed my own website with HTML, CSS3 and Javascript - animations and more. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
     	"2015",
-    	"# [Boxx](https://itunes.apple.com/tr/app/boxx-game-that-playing-boxes/id984184124?l=tr&mt=8) \n It is a game project for App Store. I used Cordova for building my hybrid codes. These codes on [Github](https://github.com/BQRA/boxx) now and its open-source. It was free when it published. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` `Cordova` \n ### Freelance ### Open-Source"
+    	"# [Boxx](https://itunes.apple.com/tr/app/boxx-game-that-playing-boxes/id984184124?l=tr&mt=8) \n A game project for App Store. I used Cordova to build the project. The code is on [Github](https://github.com/BQRA/boxx) now and open-source. \n\n `PSD` `Sketch` `HTML` `CSS` `jQuery` `Cordova` \n ### Freelance ### Open-Source"
     ],
     [
       "2015",
-      "# [Emlak Konut Mobile Application](https://itunes.apple.com/us/app/emlak-konut-gyo/id990825259?mt=8) \n It was a mobile design project for goverment’s Emlak Konut attempt. \n\n `Sketch Design` \n ### Remote"
+      "# [Emlak Konut Mobile Application](https://itunes.apple.com/us/app/emlak-konut-gyo/id990825259?mt=8) \n A mobile design project for the goverment’s Emlak Konut attempt. \n\n `Sketch Design` \n ### Remote"
     ],
     [
       "2014",
-      "# [Kantini](http://kantini.com) \n It was a fun public projects for all universities. I designed and developed front-end and my friend developed back-end technologies. \n\n `Sketch Design` `HTML` `CSS` `jQuery` \n ### Freelance"
+      "# [Kantini](http://kantini.com) \n A fun public project for universities. I designed and developed the Front-End. \n\n `Sketch Design` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
       "2014",
-      "# [Raxus jQuery Slider Plugin](http://codecanyon.net/item/raxus-slider-easytouse-advanced-html5-slider/7008343) \n It is a carousel slider plugin for all developers that developed with using javascript / jquery. It is in still sales on CodeCanyon.  \n\n `HTML` `CSS` `jQuery` \n ### Freelance"
+      "# [Raxus jQuery Slider Plugin](http://codecanyon.net/item/raxus-slider-easytouse-advanced-html5-slider/7008343) \n A carousel slider plugin for engineers. It is still selling on CodeCanyon.  \n\n `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
       "2013",
-      "# [Woody](http://demos.pikselmatik.com/?themeName=woody) \n It is a ready-to-use landing page design for anyone that wants to create a website. It is still in sales on Themeforest. \n\n `PSD` `HTML` `CSS` `jQuery` \n ### Freelance"
+      "# [Woody](http://demos.pikselmatik.com/?themeName=woody) \n A ready-to-use landing page design for anyone wanting to create a simple website. It is still selling on Themeforest. \n\n `PSD` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
       "2013",
-      "# [Table Game](http://goo.gl/ibwd7) \n I designed a table game design for a company in Turkey. \n\n `PSD` \n ### Company"
+      "# [Table Game](http://goo.gl/ibwd7) \n I designed a table game for a company in Turkey. \n\n `PSD` \n ### Company"
     ],
     [
       "2011",
-      "# [Emanset](http://www.emanset.com/) \n I designed and developed a project for reading newspaper easily. It has all Turkish newspapers news. \n\n `PSD` `HTML` `CSS` `jQuery` `PHP` `Mysql` \n ### Freelance"
+      "# [Emanset](http://www.emanset.com/) \n I designed and developed a project for reading newspapers easily. It includes all Turkish newspapers's news. \n\n `PSD` `HTML` `CSS` `jQuery` `PHP` `Mysql` \n ### Freelance"
     ],
     [
       "2009",
-      "# [216 Portfolio](https://themeforest.net/item/216portfolio/56849) \n It was a personal portfolio theme for anyone wants to creating their own website. It stills in sales on Themeforest. \n\n `PSD` `HTML` `CSS` `jQuery` \n ### Freelance"
+      "# [216 Portfolio](https://themeforest.net/item/216portfolio/56849) \n A personal portfolio theme for anyone wanting to creating their own website. Still selling on Themeforest. \n\n `PSD` `HTML` `CSS` `jQuery` \n ### Freelance"
     ],
     [
       "2005",
-      "# [Piramitgroup](http://piramitgroup.org) \n I designed and developed a website for organisation company in Turkey. \n\n `PSD` `HTML` `CSS` \n ### Remote"
+      "# [Piramitgroup](http://piramitgroup.org) \n I designed and developed a website for an organisation in Turkey. \n\n `PSD` `HTML` `CSS` \n ### Remote"
     ]
   ],
-  "Certificates & Events": [
+  "Speaking Events": [
     [
   		"2021",
-  		"## Space Club: Design System Talk \n\n I have been talked in an event about Design System. Talk details on Youtube: https://www.youtube.com/watch?v=NvaCgXUM8W8"
-  	],
-  	[
-  		"2014",
-  		"## Agile management and Scrum \n\n Certificate getting from __ACM__ company."
-  	]
+  		"## Space Club: Design System Talk \n\n Speaker at event on Design System. Talk details on Youtube: https://www.youtube.com/watch?v=NvaCgXUM8W8"
+  	]  	
   ],
   "Education": [
+    [
+  		"2014",
+  		"## Agile management and Scrum \n\n Certificate received from __ACM__ company."
+  	],
   	[
   		"2009 - Abandonment",
-  		"Afyon Kocatepe Üni. __Computer Programming__ _(Remote Education)_"
+  		"Afyon Kocatepe Üni. __Computer Programming__ _(Remote)_"
   	],
   	[
   		"2004 - Abandonment",
@@ -166,10 +166,10 @@
   "Hobbies": [
   	[
   		"",
-  		"Design world, Motocycle trips, Sport, Camping"
+  		"All things design, Technology, Motocycle trips, Sport, Camping"
   	]
   ],
-  "Me on Social Networks": [
+  "My social media links": [
   	[
   		"",
   		"[LinkedIn](http://tr.linkedin.com/in/boradan) \n\n [Behance](https://www.behance.net/BQRA) \n\n[http://dribbble.com/bqra](http://dribbble.com/bqra) \n\n [http://github.com/bqra](http://github.com/bqra) \n\n [http://themeforest.net/user/bqra](http://themeforest.net/user/bqra) \n\n [http://codecanyon.net/user/bqra](http://codecanyon.net/user/bqra) \n\n [http://bqra.deviantart.com/](http://bqra.deviantart.com/) \n\n [http://pikselmatik.com](http://pikselmatik.com)"
