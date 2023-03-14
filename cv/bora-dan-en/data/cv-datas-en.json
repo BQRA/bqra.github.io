@@ -6,7 +6,7 @@
   	],
   	[
   		"Applications",
-  		"Figma, Sketch, Zeplin, Invision, Framer X, Sublime (Mac Os), Adobe Photoshop, Dreamweaver, Visual Studio, Firebug, AutoCAD, Mac Os X"
+  		"Figma, Sketch, Zeplin, Invision, Framer X, Protopie, Adobe Photoshop, Dreamweaver, VS Code, AutoCAD"
   	]
   ],
   "Talks": [
@@ -24,7 +24,7 @@
   	],
     [
   		"2021",
-  		"## Space Club: Design System Talk \n\n Speaker at event on Design System. Talk details on Youtube: https://www.youtube.com/watch?v=NvaCgXUM8W8"
+  		"## Space Club: Design System Talk \n\n Speaker at event on Design System. Talk details on Youtube: https://www.youtube.com/watch?v=NvaCgXUM8W8 \n\n\n"
   	]
   ],
   "Work Experience": [
@@ -78,6 +78,10 @@
     ]
   ],
   "Personal Projects": [
+    [
+      "2022",
+      "# [Flizzle](https://bqra.gumroad.com/l/flizzle) \n Flizzle is completely ready-for-development flight booking project. It can be used for other booking projects by the way. \n\n `Figma` `Design Kit` \n ### Freelance"
+    ],
     [
       "2021",
       "# [Rio](https://ui8.net/pixelmatic/products/rio--design-system-for-electric-scooters?status=6) \n Rio is a completely ready for development electric scooter/bike sharing project. \n\n `Figma` `Design Kit` \n ### Freelance"
