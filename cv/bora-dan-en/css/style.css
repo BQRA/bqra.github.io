@@ -397,3 +397,8 @@ a:active {
   font-weight: 700;
   letter-spacing: 1px;
 }
+@media print {
+  body {
+    background: red;
+  }
+}
