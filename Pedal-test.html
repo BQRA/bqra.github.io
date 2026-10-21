@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+  <h2 id="status">Waiting...</h2>
+  <div id="log"></div>
+
+  <script>
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'b') return;
+      document.getElementById('status').textContent =
+        'KEY DOWN - Handset placed';
+      addLog('keydown', e.repeat);
+    });
+
+    document.addEventListener('keyup', (e) => {
+      if (e.key !== 'b') return;
+      document.getElementById('status').textContent =
+        'KEY UP - Handset lifted';
+      addLog('keyup', false);
+    });
+
+    function addLog(type, repeat) {
+      const entry = document.createElement('p');
+      entry.textContent =
+        `${new Date().toLocaleTimeString()} ${type}` +
+        (repeat ? ' (repeat)' : '');
+      document.getElementById('log').prepend(entry);
+    }
+  </script>
+</body>
+</html>
