@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f3efe5">
+  <title>SIKKA — Call Yesterday for Tomorrow</title>
+  <style>
+    :root { color-scheme: light; --paper: #f3efe5; --ink: #303d35; --muted: #72776b; --line: #d8d9cc; --accent: #b64d30; --green: #3c654e; }
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; -webkit-tap-highlight-color: transparent; }
+    button, a { touch-action: manipulation; }
+    button { font: inherit; color: inherit; cursor: pointer; }
+    button:disabled { cursor: wait; opacity: .45; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 7px; }
+    .shell { max-width: 1440px; margin: auto; padding: max(28px, env(safe-area-inset-top)) max(38px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom)) max(38px, env(safe-area-inset-left)); }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .wordmark { font-size: 24px; font-weight: 750; letter-spacing: .19em; }
+    .edition { margin-left: 24px; color: var(--muted); font-size: 10px; letter-spacing: .16em; vertical-align: middle; }
+    .tag { border: 1px solid #cbd0c2; border-radius: 30px; padding: 9px 13px; color: var(--muted); font-size: 10px; letter-spacing: .12em; white-space: nowrap; }
+    .tag::before { content: ""; display: inline-block; width: 6px; height: 6px; background: #a3a68f; border-radius: 50%; margin-right: 8px; }
+    main { min-height: 640px; min-height: min(780px, calc(100svh - 180px)); display: flex; flex-direction: column; align-items: center; text-align: center; padding: 38px 0 40px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: 10px; color: var(--muted); margin: 0; }
+    .dial { width: 120px; height: 120px; margin: 30px 0 25px; color: var(--accent); }
+    .dial svg { width: 100%; height: 100%; overflow: visible; }
+    .dial .outer { stroke: var(--line); }
+    .dial .holes { transform-origin: 60px 60px; }
+    h1, .call { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(48px, 7.4vw, 88px); line-height: 1.04; letter-spacing: -.055em; margin: 0; }
+    h1 { max-width: 780px; }
+    .call { border: 0; padding: 5px 20px 10px; background: transparent; color: var(--accent); transition: color .2s; }
+    .call:hover { color: #8e3521; }
+    .call span { display: block; }
+    .hint { color: var(--muted); font-size: 13px; line-height: 1.7; min-height: 23px; margin: 22px 0 0; max-width: 580px; }
+    .status { display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; font-size: 10px; letter-spacing: .13em; text-transform: uppercase; padding: 11px 16px; border: 1px solid var(--line); border-radius: 30px; }
+    .status-dot { width: 6px; height: 6px; background: var(--muted); border-radius: 50%; }
+    .timer { font-variant-numeric: tabular-nums; }
+    .steps { display: flex; gap: 0; align-items: center; margin: auto 0 0; padding-top: 40px; color: #929588; }
+    .step { font-size: 10px; letter-spacing: .04em; white-space: nowrap; }
+    .step b { font-size: 9px; font-weight: 400; margin-right: 8px; }
+    .step-line { height: 1px; width: 60px; background: var(--line); margin: 0 18px; }
+    .step.active { color: var(--accent); }
+    .pill { min-height: 46px; border: 1px solid var(--line); background: transparent; border-radius: 30px; padding: 12px 22px; font-size: 12px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .pill.primary { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+    .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 22px; }
+    .setup { width: 100%; max-width: 610px; margin-top: 24px; padding: 18px 20px; background: #e9e8dc; border: 1px solid var(--line); border-radius: 6px; display: flex; gap: 18px; align-items: center; text-align: left; }
+    .setup p { font-size: 11px; color: var(--muted); line-height: 1.6; margin: 0; }
+    .setup strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 12px; font-weight: 500; }
+    .setup button { flex-shrink: 0; }
+    .error { max-width: 610px; background: #eee0d5; border: 1px solid #d9b7a6; border-radius: 6px; padding: 15px 20px; margin-top: 20px; text-align: left; }
+    .error p { margin: 0; line-height: 1.6; font-size: 12px; color: #853a28; white-space: pre-line; }
+    .saved { max-width: 610px; width: 100%; border-top: 1px solid var(--line); margin-top: 22px; padding-top: 15px; }
+    .saved p { font-size: 11px; color: var(--muted); line-height: 1.6; margin: 0 0 12px; }
+    audio { width: 100%; max-width: 430px; height: 38px; }
+    .saved .actions { margin-top: 12px; }
+    footer { border-top: 1px solid var(--line); padding-top: 18px; display: flex; gap: 18px; justify-content: space-between; color: var(--muted); font-size: 10px; letter-spacing: .04em; line-height: 1.7; }
+    footer p { margin: 0; }
+    details { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 12px; line-height: 1.7; }
+    summary { cursor: pointer; color: var(--muted); font-size: 11px; width: fit-content; }
+    .operator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; padding: 20px 0; }
+    .operator-grid h2 { font-size: 12px; font-weight: 600; margin: 0 0 8px; }
+    .operator-grid p, .operator-grid ol { color: var(--muted); margin: 0 0 14px; }
+    .operator-grid ol { padding-left: 18px; }
+    .operator-grid .actions { justify-content: flex-start; margin: 0 0 16px; }
+    .diagnostics { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 11px; white-space: pre-line; }
+    .operator-grid a { color: var(--green); }
+    body[data-state="recording"] .status { color: var(--accent); border-color: #dab6a2; }
+    body[data-state="recording"] .status-dot { background: var(--accent); animation: pulse 1.4s ease-in-out infinite; }
+    body[data-state="dialing"] .holes { animation: turn 1.7s ease-in-out infinite; }
+    body[data-state="ringing"] .handset { animation: ring .3s ease-in-out infinite alternate; transform-origin: center; }
+    body[data-state="recording"] .dial { color: var(--green); }
+    @keyframes pulse { 50% { opacity: .3; } }
+    @keyframes turn { 50% { transform: rotate(85deg); } }
+    @keyframes ring { to { transform: rotate(8deg); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+    @media (min-height: 1000px) { main { min-height: calc(100svh - 200px); justify-content: center; } .steps { margin-top: 60px; } .dial { margin-bottom: 35px; } }
+    @media (max-width: 600px) { .shell { padding-left: 22px; padding-right: 22px; } .edition { display: none; } .tag { font-size: 8px; } main { padding-top: 30px; min-height: 650px; } .dial { width: 98px; height: 98px; } .setup { flex-direction: column; text-align: center; gap: 12px; } .step-line { width: 20px; margin: 0 10px; } .step { font-size: 9px; } footer { flex-direction: column; gap: 5px; } .operator-grid { grid-template-columns: 1fr; gap: 18px; } }
+  </style>
+</head>
+<body data-state="idle">
+  <div class="shell">
+    <header>
+      <div><span class="wordmark">SIKKA</span><span class="edition">AN EXPERIMENT IN LISTENING</span></div>
+      <span class="tag">INTERACTIVE PROTOTYPE · 01</span>
+    </header>
+    <main>
+      <p class="eyebrow">A connection across time</p>
+      <div class="dial" aria-hidden="true">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle class="outer" cx="60" cy="60" r="58" stroke-width="1" />
+          <circle cx="60" cy="60" r="46" stroke="currentColor" stroke-width="1" />
+          <g class="holes" stroke="currentColor" stroke-width="1.3">
+            <circle cx="60" cy="24" r="4.3"/><circle cx="81.2" cy="30.9" r="4.3"/>
+            <circle cx="94.2" cy="48.9" r="4.3"/><circle cx="94.2" cy="71.1" r="4.3"/>
+            <circle cx="81.2" cy="89.1" r="4.3"/><circle cx="60" cy="96" r="4.3"/>
+            <circle cx="38.8" cy="89.1" r="4.3"/><circle cx="25.8" cy="71.1" r="4.3"/>
+            <circle cx="25.8" cy="48.9" r="4.3"/><circle cx="38.8" cy="30.9" r="4.3"/>
+          </g>
+          <circle cx="60" cy="60" r="22" stroke="currentColor" stroke-width="1"/>
+          <path class="handset" d="M47 54c1-3 4-5 6-3l4 5c1 1 0 3-2 4 2 3 4 5 7 6 1-2 3-3 4-2l5 4c2 2 0 5-3 6-7 2-23-14-21-20Z" fill="currentColor" transform="translate(1 -3)"/>
+        </svg>
+      </div>
+      <h1 id="headline">Yesterday is<br>on the line.</h1>
+      <button id="call" class="call" aria-label="Call Yesterday for Tomorrow" hidden><span>Call Yesterday</span><span>for Tomorrow</span></button>
+      <p id="hint" class="hint">Lift the handset. Leave a little of today behind.</p>
+      <div class="status" role="status" aria-live="polite" aria-atomic="true"><span class="status-dot" aria-hidden="true"></span><span id="status">Waiting for handset</span><span id="timer" class="timer" hidden>00:00</span></div>
+      <section id="setup" class="setup" aria-label="One-time installation setup">
+        <div><strong>A moment to connect.</strong><p>Before the first call, enable sound and allow microphone access on this iPad.</p></div>
+        <button id="enable" class="pill primary">Enable audio &amp; microphone</button>
+      </section>
+      <section id="error" class="error" role="alert" hidden><p id="error-message"></p></section>
+      <div class="actions">
+        <button id="retry" class="pill primary" hidden>Try again</button>
+        <button id="stop" class="pill" hidden>Stop recording</button>
+        <button id="reset" class="pill" hidden>End call &amp; reset</button>
+      </div>
+      <section id="saved" class="saved" aria-label="Latest recording" hidden>
+        <p id="saved-label">Your latest message is ready.</p>
+        <audio id="preview" controls preload="metadata" aria-label="Listen to your latest recording"></audio>
+        <div class="actions"><a id="download" class="pill" download>Download recording ↓</a></div>
+        <p>Only the latest recording is kept in this page. Download it before the next recording or reload.</p>
+      </section>
+      <nav class="steps" aria-label="Call progress">
+        <span id="step-lift" class="step active"><b>01</b> Lift the handset</span><span class="step-line"></span>
+        <span id="step-call" class="step"><b>02</b> Call yesterday</span><span class="step-line"></span>
+        <span id="step-record" class="step"><b>03</b> Leave a message</span>
+      </nav>
+    </main>
+    <footer><p>YESTERDAY’S VOICES. TOMORROW’S MEMORIES.</p><p>Recorded on this device · Nothing is uploaded</p></footer>
+    <details id="operator">
+      <summary>Installation controls &amp; test guide</summary>
+      <div class="operator-grid">
+        <section>
+          <h2>Try the experience</h2>
+          <ol>
+            <li>Open this page in Safari. Tap “Enable audio &amp; microphone” and allow microphone access.</li>
+            <li>Press the pedal (keyboard B): handset down, idle. Release B: handset lifted, dial tone.</li>
+            <li>Tap “Call Yesterday for Tomorrow”: redial beeps → two rings → pickup → microphone recording.</li>
+            <li>Press the pedal to stop and reset, or tap “Stop recording”. Download the latest message below the status.</li>
+          </ol>
+          <div class="actions"><button id="simulate-lift" class="pill">Simulate handset lift</button><button id="simulate-down" class="pill">Simulate handset down</button><button id="enable-again" class="pill">Enable / recheck permissions</button></div>
+          <p>Simulation uses the same handset actions. Held/repeated B keydowns are ignored. Returning the handset cancels the entire call sequence immediately.</p>
+          <div id="diagnostics" class="diagnostics" aria-label="Connection diagnostics"></div>
+        </section>
+        <section>
+          <h2>iPad Safari setup</h2>
+          <p>For reliable microphone permission, serve this unchanged HTML file from an HTTPS address and open that address directly in Safari. An insecure HTTP address on another device will not work for microphone recording. An iPad Files / Quick Look preview may block microphone access; open the HTTPS page in Safari instead.</p>
+          <p>Sound activation requires a tap. If Safari interrupts audio after locking the screen or switching apps, lift the handset and tap “Enable / recheck permissions”. Keep Safari in the foreground. Hiding the page stops the call and microphone.</p>
+          <p>The microphone is checked during setup and opened again before dialing; recording starts only after the pickup sound finishes. Safari may ask for permission again. If the permission dialog stays open, answer it before retrying.</p>
+          <p>Maximum recording: 5 minutes. Hanging up also keeps the latest message available to download. Reset stops microphone tracks; old object URLs are released when replaced. Reloading clears recordings. Download format follows the browser (usually MP4/M4A or WebM).</p>
+          <p>Connect the USB handset before setup. Sound and microphone use the iPad’s selected devices; verify the actual handset route on the iPad. These are locally generated test tones, not a real telephone call.</p>
+          <p>API references: <a href="https://webkit.org/blog/11353/mediarecorder-api/" target="_blank" rel="noopener noreferrer">WebKit recording</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia" target="_blank" rel="noopener noreferrer">Microphone permissions</a></p>
+        </section>
+      </div>
+    </details>
+  </div>
+  <script>
+    "use strict";
+
+    const elements = Object.fromEntries(Array.from(document.querySelectorAll("[id]")).map(element => [element.id, element]));
+    const maximumRecordingMs = 5 * 60 * 1000;
+    const activeStates = new Set(["setup", "permission", "dialing", "ringing", "pickup", "recording"]);
+    let state = "idle";
+    let prepared = false;
+    let handsetLifted = false;
+    let pedalHeld = false;
+    let generation = 0;
+    let controller = null;
+    let audioContext = null;
+    let microphoneRequest = null;
+    let microphoneStream = null;
+    let session = null;
+    let saving = 0;
+    let recordingSerial = 0;
+    let savedSerial = 0;
+    let recordingUrl = null;
+    let recordingType = "";
+    let latestRecordingName = "";
+    let completionNote = "";
+    let previousKey = "No pedal event yet";
+    const soundNodes = new Set();
+    const soundGroups = new Set();
+
+    function render() {
+      document.body.dataset.state = state;
+      const content = {
+        idle: ["Yesterday is\non the line.", "Lift the handset. Leave a little of today behind.", "Waiting for handset"],
+        ready: ["", prepared ? "Tap to make a connection across time." : "Enable audio and microphone to make your first call.", "Handset lifted"],
+        setup: ["A moment\nto connect.", "Allow microphone access in Safari’s permission prompt.", "Preparing audio & microphone"],
+        permission: ["Making\na connection.", "Allow microphone access if Safari asks. Recording has not started.", "Opening microphone"],
+        dialing: ["Calling\nyesterday…", "A familiar number. An unfamiliar time.", "Redialing"],
+        ringing: ["Somewhere,\na phone rings.", "Waiting for yesterday to pick up.", "Ringing"],
+        pickup: ["You’re\nconnected.", "The line is opening. Your recording starts in a moment.", "Picked up"],
+        recording: ["Tomorrow\nis listening.", "Take your time. What would you like to leave behind?", "Recording"],
+        complete: ["A little of today,\nkept for tomorrow.", completionNote || "Your message has ended. Return the handset when you’re ready.", saving ? "Finishing recording" : "Call ended"],
+        error: ["Let’s reconnect.", "The call has stopped. Follow the instructions below, then try again.", "Connection needs attention"]
+      }[state];
+      elements.headline.textContent = content[0];
+      elements.headline.style.whiteSpace = "pre-line";
+      elements.headline.hidden = state === "ready";
+      elements.call.hidden = state !== "ready";
+      elements.call.disabled = !prepared || saving > 0;
+      elements.hint.textContent = content[1];
+      elements.status.textContent = content[2];
+      elements.timer.hidden = state !== "recording";
+      elements.setup.hidden = prepared || state === "setup";
+      elements.enable.disabled = activeStates.has(state);
+      elements["enable-again"].disabled = activeStates.has(state);
+      elements.stop.hidden = state !== "recording";
+      elements.reset.hidden = !activeStates.has(state) && state !== "complete" && state !== "error";
+      elements.retry.hidden = state !== "error";
+      elements.retry.disabled = saving > 0;
+      elements.saved.hidden = !recordingUrl || activeStates.has(state);
+      elements["step-lift"].classList.toggle("active", state === "idle");
+      elements["step-call"].classList.toggle("active", ["ready", "permission", "dialing", "ringing", "pickup"].includes(state));
+      elements["step-record"].classList.toggle("active", ["recording", "complete"].includes(state));
+      elements.diagnostics.textContent = `Page: ${window.isSecureContext ? "secure context" : "insecure context — use HTTPS"}\nAudio: ${audioContext ? audioContext.state : "not enabled"} · Microphone: ${microphoneStream ? "open" : microphoneRequest ? "permission pending" : "closed"}\nHandset: ${handsetLifted ? "lifted" : "down"} · ${previousKey}${saving ? "\nFinishing the previous recording…" : ""}`;
+    }
+
+    function setState(nextState) {
+      state = nextState;
+      render();
+    }
+
+    function stopStream(stream) {
+      if (stream) stream.getTracks().forEach(track => track.stop());
+    }
+
+    function stopSounds() {
+      for (const group of soundGroups) group.disconnect();
+      soundGroups.clear();
+      for (const node of soundNodes) {
+        try { node.stop(); } catch (error) { if (error.name !== "InvalidStateError") console.error(error); }
+        node.disconnect();
+      }
+      soundNodes.clear();
+    }
+
+    function abortError() {
+      return new DOMException("The handset was returned or the call was cancelled.", "AbortError");
+    }
+
+    function checkFlow(token) {
+      if (token !== generation || !controller || controller.signal.aborted) throw abortError();
+    }
+
+    function withDeadline(promise, signal, milliseconds, message) {
+      return new Promise((resolve, reject) => {
+        let finished = false;
+        const finish = (callback, value) => {
+          if (finished) return;
+          finished = true;
+          clearTimeout(timeout);
+          signal.removeEventListener("abort", cancel);
+          callback(value);
+        };
+        const cancel = () => finish(reject, abortError());
+        const timeout = setTimeout(() => finish(reject, new Error(message)), milliseconds);
+        signal.addEventListener("abort", cancel, { once: true });
+        promise.then(value => finish(resolve, value), error => finish(reject, error));
+        if (signal.aborted) cancel();
+      });
+    }
+
+    async function enableAudio(token) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) throw new Error("Web Audio is unavailable. Open this page in a current version of Safari.");
+      if (!audioContext || audioContext.state === "closed") {
+        audioContext = new AudioContextClass();
+        audioContext.addEventListener("statechange", () => {
+          if (audioContext.state !== "running" && ["dialing", "ringing", "pickup"].includes(state)) {
+            fail(new Error("Safari interrupted the call audio. Tap Try again to reactivate sound."), generation);
+          } else render();
+        });
+      }
+      const resume = audioContext.resume();
+      await withDeadline(resume, controller.signal, 8000, "Safari did not activate sound. Tap Try again while this page is visible.");
+      checkFlow(token);
+      if (audioContext.state !== "running") throw new Error("Sound is paused by Safari. Tap Try again to activate it.");
+    }
+
+    async function openMicrophone(token) {
+      if (!window.isSecureContext) throw new Error("Microphone access needs a secure page. Serve this HTML over HTTPS and open its address directly in iPad Safari. Plain HTTP from another device cannot record.");
+      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) throw new Error("Microphone access is unavailable in this viewer. Open the page directly in Safari from an HTTPS address, rather than an iPad Files or Quick Look preview.");
+      if (!window.MediaRecorder) throw new Error("This browser cannot record microphone audio. Update iPadOS and use Safari.");
+      if (microphoneRequest) throw new Error("Safari still has a microphone request pending. Answer or dismiss its permission dialog, then tap Try again.");
+      let abandoned = false;
+      const request = navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: true, noiseSuppression: true }, video: false });
+      microphoneRequest = request;
+      request.then(stream => {
+        if (token !== generation || abandoned) stopStream(stream);
+      }, () => {}).finally(() => {
+        if (microphoneRequest === request) microphoneRequest = null;
+        render();
+      });
+      try {
+        const stream = await withDeadline(request, controller.signal, 30000, "Microphone permission is still waiting. Answer Safari’s permission dialog, then tap Try again.");
+        checkFlow(token);
+        microphoneStream = stream;
+        return stream;
+      } catch (error) {
+        abandoned = true;
+        request.then(stream => stopStream(stream), () => {});
+        throw error;
+      }
+    }
+
+    function pausePreview() {
+      elements.preview.pause();
+    }
+
+    function stopRecording() {
+      if (!session) {
+        stopStream(microphoneStream);
+        microphoneStream = null;
+        return;
+      }
+      const current = session;
+      session = null;
+      clearInterval(current.clock);
+      clearTimeout(current.limit);
+      if (current.recorder.state !== "inactive") {
+        saving += 1;
+        current.finishing = true;
+        try { current.recorder.stop(); } catch (error) {
+          saving -= 1;
+          current.finishing = false;
+          elements["error-message"].textContent = `Recording could not be finalized: ${error.message}`;
+          elements.error.hidden = false;
+        }
+      }
+      stopStream(current.stream);
+      if (microphoneStream === current.stream) microphoneStream = null;
+    }
+
+    function cancelFlow() {
+      generation += 1;
+      if (controller) controller.abort();
+      controller = null;
+      stopSounds();
+      stopRecording();
+      pausePreview();
+    }
+
+    function beginFlow() {
+      cancelFlow();
+      controller = new AbortController();
+      completionNote = "";
+      elements.error.hidden = true;
+      return generation;
+    }
+
+    function describeError(error) {
+      const messages = {
+        NotAllowedError: "Microphone permission was denied or blocked. In Safari, open the website settings and allow Microphone access, then tap Try again. Open this page directly over HTTPS if you are in a file preview.",
+        NotFoundError: "No microphone was found. Connect the handset or enable the iPad microphone, then tap Try again.",
+        NotReadableError: "Safari could not open the microphone. Check the USB handset and close other apps using it, then tap Try again.",
+        AbortError: "Safari interrupted microphone access. Reconnect the handset, keep Safari in the foreground, and tap Try again.",
+        OverconstrainedError: "The selected microphone does not support these settings. Reconnect the handset and try again.",
+        SecurityError: "Microphone access is blocked in this page. Open the HTML from an HTTPS address directly in Safari.",
+        InvalidStateError: "Safari interrupted this operation. Bring this page to the foreground, then tap Try again."
+      };
+      return messages[error.name] || error.message || "Something interrupted the call. Tap Try again to reconnect.";
+    }
+
+    function fail(error, token) {
+      if (token !== generation) return;
+      cancelFlow();
+      prepared = false;
+      elements["error-message"].textContent = describeError(error);
+      elements.error.hidden = false;
+      setState("error");
+    }
+
+    function tone(frequencies, start, duration, level = 0.09) {
+      const envelope = audioContext.createGain();
+      envelope.connect(audioContext.destination);
+      soundGroups.add(envelope);
+      envelope.gain.setValueAtTime(0, start);
+      envelope.gain.linearRampToValueAtTime(level / frequencies.length, start + 0.008);
+      if (Number.isFinite(duration)) {
+        envelope.gain.setValueAtTime(level / frequencies.length, start + Math.max(0.009, duration - 0.012));
+        envelope.gain.linearRampToValueAtTime(0, start + duration);
+      }
+      let remaining = frequencies.length;
+      for (const frequency of frequencies) {
+        const oscillator = audioContext.createOscillator();
+        oscillator.frequency.value = frequency;
+        oscillator.connect(envelope);
+        soundNodes.add(oscillator);
+        oscillator.onended = () => {
+          soundNodes.delete(oscillator);
+          oscillator.disconnect();
+          remaining -= 1;
+          if (!remaining) { envelope.disconnect(); soundGroups.delete(envelope); }
+        };
+        oscillator.start(start);
+        if (Number.isFinite(duration)) oscillator.stop(start + duration + 0.01);
+      }
+    }
+
+    function waitForAudio(endTime, token) {
+      return new Promise((resolve, reject) => {
+        const signal = controller.signal;
+        const finish = error => {
+          clearInterval(clock);
+          signal.removeEventListener("abort", cancel);
+          if (error) reject(error); else resolve();
+        };
+        const cancel = () => finish(abortError());
+        const started = performance.now();
+        const maximumWait = (endTime - audioContext.currentTime) * 1000 + 8000;
+        const clock = setInterval(() => {
+          if (token !== generation) return finish(abortError());
+          if (audioContext.state !== "running") return finish(new Error("Safari paused the call audio. Tap Try again to reactivate sound."));
+          if (audioContext.currentTime >= endTime) return finish();
+          if (performance.now() - started > maximumWait) finish(new Error("Call audio stalled. Tap Try again to reconnect."));
+        }, 35);
+        signal.addEventListener("abort", cancel, { once: true });
+        if (signal.aborted) cancel();
+      });
+    }
+
+    function startDialTone() {
+      stopSounds();
+      if (prepared && handsetLifted && state === "ready" && audioContext && audioContext.state === "running") {
+        tone([350, 440], audioContext.currentTime + 0.02, Infinity, 0.055);
+      }
+    }
+
+    async function prepare() {
+      if (activeStates.has(state)) return;
+      const token = beginFlow();
+      setState("setup");
+      try {
+        await enableAudio(token);
+        const stream = await openMicrophone(token);
+        checkFlow(token);
+        stopStream(stream);
+        microphoneStream = null;
+        await enableAudio(token);
+        prepared = true;
+        setState(handsetLifted ? "ready" : "idle");
+        startDialTone();
+      } catch (error) { fail(error, token); }
+    }
+
+    async function makeCall() {
+      if (state !== "ready" || !prepared || saving) return;
+      const token = beginFlow();
+      setState("permission");
+      try {
+        await enableAudio(token);
+        const stream = await openMicrophone(token);
+        checkFlow(token);
+        for (const track of stream.getAudioTracks()) {
+          track.addEventListener("ended", () => fail(new Error("The microphone disconnected. Reconnect the handset and tap Try again."), token), { once: true });
+          track.addEventListener("mute", () => fail(new Error("Safari muted or interrupted the microphone. Check microphone access and tap Try again."), token), { once: true });
+        }
+        await enableAudio(token);
+        setState("dialing");
+        const digits = [[697, 1209], [770, 1336], [852, 1477], [941, 1336], [770, 1209], [697, 1477], [852, 1336]];
+        let cursor = audioContext.currentTime + 0.04;
+        for (const frequencies of digits) {
+          tone(frequencies, cursor, 0.12);
+          cursor += 0.19;
+        }
+        await waitForAudio(cursor + 0.15, token);
+        checkFlow(token);
+        setState("ringing");
+        cursor = audioContext.currentTime + 0.04;
+        for (let ring = 0; ring < 2; ring += 1) {
+          tone([440, 480], cursor, 1.6, 0.075);
+          cursor += ring === 0 ? 2.8 : 1.9;
+        }
+        await waitForAudio(cursor, token);
+        checkFlow(token);
+        setState("pickup");
+        cursor = audioContext.currentTime + 0.03;
+        tone([180, 850], cursor, 0.025, 0.12);
+        tone([260], cursor + 0.07, 0.045, 0.07);
+        tone([880], cursor + 0.19, 0.14, 0.055);
+        await waitForAudio(cursor + 0.5, token);
+        checkFlow(token);
+        stopSounds();
+        startRecording(stream, token);
+      } catch (error) { fail(error, token); }
+    }
+
+    function startRecording(stream, token) {
+      checkFlow(token);
+      if (!stream.getAudioTracks().some(track => track.readyState === "live" && !track.muted)) throw new Error("The microphone is no longer available. Reconnect the handset and tap Try again.");
+      const preferredTypes = ["audio/mp4;codecs=mp4a.40.2", "audio/mp4", "audio/webm;codecs=opus", "audio/webm", "audio/ogg;codecs=opus"];
+      const mimeType = preferredTypes.find(type => typeof MediaRecorder.isTypeSupported === "function" && MediaRecorder.isTypeSupported(type));
+      let recorder;
+      try { recorder = new MediaRecorder(stream, mimeType ? { mimeType } : {}); }
+      catch (error) { recorder = new MediaRecorder(stream); }
+      const current = { recorder, stream, chunks: [], serial: ++recordingSerial, started: performance.now(), clock: null, limit: null, finishing: false, failed: false };
+      recorder.addEventListener("dataavailable", event => { if (event.data && event.data.size) current.chunks.push(event.data); });
+      recorder.addEventListener("error", event => {
+        current.failed = true;
+        fail(event.error || new Error("Safari could not record audio. Check microphone access and try again."), token);
+      });
+      recorder.addEventListener("stop", () => {
+        clearInterval(current.clock);
+        clearTimeout(current.limit);
+        if (current.finishing) { saving = Math.max(0, saving - 1); current.finishing = false; }
+        if (session === current) {
+          session = null;
+          stopStream(stream);
+          if (microphoneStream === stream) microphoneStream = null;
+          if (token === generation && state === "recording") setState("complete");
+        }
+        const type = recorder.mimeType || (current.chunks[0] && current.chunks[0].type) || "application/octet-stream";
+        const blob = new Blob(current.chunks, { type });
+        current.chunks.length = 0;
+        if (!current.failed && blob.size > 0 && current.serial >= savedSerial) {
+          savedSerial = current.serial;
+          pausePreview();
+          elements.preview.removeAttribute("src");
+          elements.preview.load();
+          if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+          recordingUrl = URL.createObjectURL(blob);
+          recordingType = type;
+          const extension = type.includes("mp4") ? "m4a" : type.includes("webm") ? "webm" : type.includes("ogg") ? "ogg" : "audio";
+          latestRecordingName = `sikka-message-${new Date().toISOString().replace(/[:.]/g, "-")}.${extension}`;
+          elements.preview.src = recordingUrl;
+          elements.download.href = recordingUrl;
+          elements.download.download = latestRecordingName;
+          elements["saved-label"].textContent = `Latest message · ${Math.max(1, Math.round((performance.now() - current.started) / 1000))} seconds · ${(blob.size / 1024).toFixed(1)} KB · ${extension.toUpperCase()}`;
+        } else if (!current.failed && !blob.size) {
+          elements["error-message"].textContent = "Safari returned an empty recording. Check the microphone and try a longer message. Any previous recording is still available.";
+          elements.error.hidden = false;
+        }
+        render();
+      }, { once: true });
+      session = current;
+      recorder.start(1000);
+      current.started = performance.now();
+      elements.timer.textContent = "00:00";
+      current.clock = setInterval(() => {
+        const seconds = Math.floor((performance.now() - current.started) / 1000);
+        elements.timer.textContent = `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+      }, 250);
+      current.limit = setTimeout(() => {
+        if (session !== current) return;
+        completionNote = "The 5-minute recording limit was reached. Your message is ready to download.";
+        finishCall();
+      }, maximumRecordingMs);
+      setState("recording");
+    }
+
+    function handsetDown() {
+      handsetLifted = false;
+      cancelFlow();
+      elements.error.hidden = true;
+      setState("idle");
+    }
+
+    function handsetUp() {
+      if (handsetLifted) return;
+      handsetLifted = true;
+      cancelFlow();
+      elements.error.hidden = true;
+      setState("ready");
+      startDialTone();
+    }
+
+    function finishCall() {
+      cancelFlow();
+      setState("complete");
+    }
+
+    function isPedal(event) {
+      return event.code === "KeyB" || String(event.key).toLowerCase() === "b";
+    }
+
+    document.addEventListener("keydown", event => {
+      if (!isPedal(event) || event.metaKey || event.ctrlKey || event.altKey || event.isComposing) return;
+      event.preventDefault();
+      if (event.repeat || pedalHeld) return;
+      pedalHeld = true;
+      previousKey = "B down — handset returned";
+      handsetDown();
+    });
+    document.addEventListener("keyup", event => {
+      if (!isPedal(event) || event.metaKey || event.ctrlKey || event.altKey || event.isComposing) return;
+      event.preventDefault();
+      pedalHeld = false;
+      previousKey = "B up — handset lifted";
+      handsetUp();
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) { pedalHeld = false; handsetDown(); }
+    });
+    window.addEventListener("pagehide", () => { pedalHeld = false; handsetDown(); });
+    window.addEventListener("blur", () => { pedalHeld = false; });
+    elements.enable.addEventListener("click", prepare);
+    elements["enable-again"].addEventListener("click", prepare);
+    elements.call.addEventListener("click", makeCall);
+    elements.stop.addEventListener("click", finishCall);
+    elements.reset.addEventListener("click", handsetDown);
+    elements.retry.addEventListener("click", prepare);
+    elements["simulate-lift"].addEventListener("click", () => { pedalHeld = false; previousKey = "Simulated lift"; handsetUp(); });
+    elements["simulate-down"].addEventListener("click", () => { pedalHeld = false; previousKey = "Simulated return"; handsetDown(); });
+    elements.preview.addEventListener("play", () => {
+      if (activeStates.has(state)) pausePreview();
+      else stopSounds();
+    });
+    elements.preview.addEventListener("pause", () => { if (state === "ready") startDialTone(); });
+    elements.preview.addEventListener("ended", () => { if (state === "ready") startDialTone(); });
+    window.addEventListener("beforeunload", () => {
+      cancelFlow();
+      if (recordingUrl) URL.revokeObjectURL(recordingUrl);
+    });
+    render();
+  </script>
+</body>
+</html>
