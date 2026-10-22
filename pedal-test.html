@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SIKKA Ahize Testi</title>
+<style>body{font-family:system-ui;background:#10141b;color:white;text-align:center;padding:50px 18px}button{font-size:19px;padding:18px 25px;border:0;border-radius:12px;background:#e9d9b3;color:#171717}#status{font-size:24px;margin:36px 0}#log{font-size:13px;opacity:.65}</style></head>
+<body><h1>SIKKA • Ahize testi</h1><p>İlk önce sesi etkinleştir, ardından pedala basıp bırak.</p><button id="enable">Sesi etkinleştir</button><div id="status">Ses henüz etkin değil</div><div id="log"></div>
+<script>
+let ctx,osc1,osc2,gain,enabled=false,down=false;
+const status=document.querySelector('#status'),log=document.querySelector('#log');
+function note(s){log.textContent=s+' • '+new Date().toLocaleTimeString()}
+async function enable(){ctx??=new (window.AudioContext||window.webkitAudioContext)();await ctx.resume();enabled=true;status.textContent='Hazır. Pedala basıp bırak.';document.querySelector('#enable').textContent='Ses etkin';note('AudioContext aktif')}
+document.querySelector('#enable').addEventListener('click',enable);
+function startTone(){if(!enabled||osc1)return;osc1=ctx.createOscillator();osc2=ctx.createOscillator();gain=ctx.createGain();osc1.frequency.value=350;osc2.frequency.value=440;gain.gain.value=0;osc1.connect(gain);osc2.connect(gain);gain.connect(ctx.destination);osc1.start();osc2.start();gain.gain.setTargetAtTime(.10,ctx.currentTime,.015)}
+function stopTone(){if(!osc1)return;const a=osc1,b=osc2,g=gain;osc1=osc2=gain=null;g.gain.setTargetAtTime(0,ctx.currentTime,.012);setTimeout(()=>{try{a.stop();b.stop();a.disconnect();b.disconnect();g.disconnect()}catch{}},120)}
+document.addEventListener('keydown',e=>{if(e.key.toLowerCase()!=='b')return;e.preventDefault();if(down)return;down=true;stopTone();status.textContent='Ahize yerinde • Bekleme ekranı';note('keydown')});
+document.addEventListener('keyup',e=>{if(e.key.toLowerCase()!=='b')return;e.preventDefault();down=false;status.textContent='Ahize kaldırıldı • Çevir sesi';startTone();note('keyup')});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopTone()});
+</script></body></html>
